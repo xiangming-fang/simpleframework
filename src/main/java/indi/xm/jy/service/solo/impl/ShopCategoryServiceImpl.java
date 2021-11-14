@@ -1,8 +1,9 @@
-package indi.xm.service.solo.impl;
+package indi.xm.jy.service.solo.impl;
 
-import indi.xm.entity.bo.ShopCategory;
-import indi.xm.entity.dto.Result;
-import indi.xm.service.solo.ShopCategoryService;
+import indi.xm.jy.entity.bo.ShopCategory;
+import indi.xm.jy.entity.dto.Result;
+import indi.xm.jy.service.solo.ShopCategoryService;
+import org.simpleFramework.core.annotation.Service;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ import java.util.List;
  * @Description:
  * @Date: 2021/11/8 18:28
  */
+@Service
 public class ShopCategoryServiceImpl implements ShopCategoryService {
     @Override
     public Result<Boolean> addShopCategory(ShopCategory shopCategory) {

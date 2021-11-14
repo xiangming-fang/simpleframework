@@ -1,11 +1,13 @@
-package indi.xm.service.combine;
+package indi.xm.jy.service.combine.impl;
 
-import indi.xm.entity.bo.HeadLine;
-import indi.xm.entity.bo.ShopCategory;
-import indi.xm.entity.dto.MainPageInfoDTO;
-import indi.xm.entity.dto.Result;
-import indi.xm.service.solo.HeadLineService;
-import indi.xm.service.solo.ShopCategoryService;
+import indi.xm.jy.entity.bo.HeadLine;
+import indi.xm.jy.entity.bo.ShopCategory;
+import indi.xm.jy.entity.dto.MainPageInfoDTO;
+import indi.xm.jy.entity.dto.Result;
+import indi.xm.jy.service.combine.HeadLineShopCategoryCombineService;
+import indi.xm.jy.service.solo.HeadLineService;
+import indi.xm.jy.service.solo.ShopCategoryService;
+import org.simpleFramework.core.annotation.Service;
 
 import java.util.List;
 
@@ -17,7 +19,8 @@ import java.util.List;
  * @Description:
  * @Date: 2021/11/8 18:32
  */
-public class HeadLineShopCategoryCombineServiceImpl implements HeadLineShopCategoryCombineService{
+@Service
+public class HeadLineShopCategoryCombineServiceImpl implements HeadLineShopCategoryCombineService {
 
     private HeadLineService headLineService;
 

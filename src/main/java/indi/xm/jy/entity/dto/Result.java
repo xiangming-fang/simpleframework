@@ -1,4 +1,4 @@
-package indi.xm.entity.dto;
+package indi.xm.jy.entity.dto;
 
 import lombok.Data;
 

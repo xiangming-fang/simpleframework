@@ -1,7 +1,7 @@
-package indi.xm.service.solo;
+package indi.xm.jy.service.solo;
 
-import indi.xm.entity.bo.HeadLine;
-import indi.xm.entity.dto.Result;
+import indi.xm.jy.entity.bo.HeadLine;
+import indi.xm.jy.entity.dto.Result;
 
 import java.util.List;
 

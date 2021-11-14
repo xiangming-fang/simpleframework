@@ -1,8 +1,9 @@
-package indi.xm.controller.superadmin;
+package indi.xm.jy.controller.superadmin;
 
-import indi.xm.entity.bo.ShopCategory;
-import indi.xm.entity.dto.Result;
-import indi.xm.service.solo.ShopCategoryService;
+import indi.xm.jy.entity.bo.ShopCategory;
+import indi.xm.jy.entity.dto.Result;
+import indi.xm.jy.service.solo.ShopCategoryService;
+import org.simpleFramework.core.annotation.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +17,7 @@ import java.util.List;
  * @Description:
  * @Date: 2021/11/8 19:13
  */
+@Controller
 public class ShopCategoryOperationController {
 
     private ShopCategoryService ShopCategoryService;

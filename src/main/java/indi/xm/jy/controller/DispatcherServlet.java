@@ -1,7 +1,7 @@
-package indi.xm.controller;
+package indi.xm.jy.controller;
 
-import indi.xm.controller.frontend.MainPageController;
-import indi.xm.controller.superadmin.HeadLineOperationController;
+import indi.xm.jy.controller.frontend.MainPageController;
+import indi.xm.jy.controller.superadmin.HeadLineOperationController;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.ServletException;
@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
 
 /**
  * @ProjectName: simpleframework

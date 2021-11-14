@@ -1,7 +1,7 @@
-package indi.xm.entity.dto;
+package indi.xm.jy.entity.dto;
 
-import indi.xm.entity.bo.HeadLine;
-import indi.xm.entity.bo.ShopCategory;
+import indi.xm.jy.entity.bo.HeadLine;
+import indi.xm.jy.entity.bo.ShopCategory;
 import lombok.Data;
 
 import java.util.List;

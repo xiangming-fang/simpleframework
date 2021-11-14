@@ -1,8 +1,9 @@
-package indi.xm.controller.superadmin;
+package indi.xm.jy.controller.superadmin;
 
-import indi.xm.entity.bo.HeadLine;
-import indi.xm.entity.dto.Result;
-import indi.xm.service.solo.HeadLineService;
+import indi.xm.jy.entity.bo.HeadLine;
+import indi.xm.jy.entity.dto.Result;
+import indi.xm.jy.service.solo.HeadLineService;
+import org.simpleFramework.core.annotation.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +17,7 @@ import java.util.List;
  * @Description:
  * @Date: 2021/11/8 19:10
  */
+@Controller
 public class HeadLineOperationController {
 
     private HeadLineService headLineService;

@@ -1,7 +1,7 @@
-package indi.xm.service.combine;
+package indi.xm.jy.service.combine;
 
-import indi.xm.entity.dto.MainPageInfoDTO;
-import indi.xm.entity.dto.Result;
+import indi.xm.jy.entity.dto.MainPageInfoDTO;
+import indi.xm.jy.entity.dto.Result;
 
 /**
  * @ProjectName: simpleframework
