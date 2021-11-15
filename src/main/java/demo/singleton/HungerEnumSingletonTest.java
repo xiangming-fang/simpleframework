@@ -1,7 +1,6 @@
-package demo.singletom;
+package demo.singleton;
 
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * @ProjectName: simpleframework
@@ -11,17 +10,24 @@ import java.lang.reflect.InvocationTargetException;
  * @Description:
  * @Date: 2021/11/12 19:34
  */
-public class SingletonTest {
+public class HungerEnumSingletonTest {
     public static void main(String[] args) throws Exception {
         HungerEnumSingleton instance = HungerEnumSingleton.getInstance();
-        HungerEnumSingleton instance1 = HungerEnumSingleton.getInstance();
         System.out.println(instance);
-        System.out.println(instance1);
         Class<HungerEnumSingleton> clazz = HungerEnumSingleton.class;
         Constructor declaredConstructor = clazz.getDeclaredConstructor();
         declaredConstructor.setAccessible(true);
         HungerEnumSingleton hungerEnumSingleton = (HungerEnumSingleton)declaredConstructor.newInstance();
         System.out.println(hungerEnumSingleton);
-        System.out.println(hungerEnumSingleton == instance);
+
+
+        System.out.println(HungerEnumSingleton.getInstance());
+
+        Class clazz1 = HungerEnumSingleton.class;
+        Constructor constructor=clazz1.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        HungerEnumSingleton enumStarvingSingleton= (HungerEnumSingleton) constructor.newInstance();
+        System.out.println(enumStarvingSingleton.getInstance());
+        System.out.println(((HungerEnumSingleton) constructor.newInstance()).getInstance());
     }
 }

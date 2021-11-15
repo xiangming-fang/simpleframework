@@ -102,4 +102,92 @@ public class BeanContainer {
         // 容器已经被加载了
         loaded = true;
     }
+
+    /**
+     * 添加一个class对象及其bean实例
+     *
+     * @param clazz
+     * @param bean
+     */
+    public Object addBean(Class<?> clazz,Object bean){
+        return beanMap.put(clazz, bean);
+    }
+
+    /**
+     * 根据指定clazz删除容器里的bean
+     * @param clazz
+     * @return
+     */
+    public Object removeBean(Class<?> clazz){
+        return beanMap.remove(clazz);
+    }
+
+    /**
+     * 根据clazz，返回对应的bean实例
+     * @param clazz
+     * @return
+     */
+    public Object getBean(Class<?> clazz){
+        return beanMap.get(clazz);
+    }
+
+    /**
+     * 返回beanmap中的所有键位
+     */
+    public Set<Class<?>> getClasses(){
+        return beanMap.keySet();
+    }
+
+    /**
+     * 获取所有Bean集合
+     *
+     * @return
+     */
+    public Set<Object> getBeans(){
+        return new HashSet<>(beanMap.values());
+    }
+
+    /**
+     * 被annotation 注解标记的类有几个在beanmap里
+     */
+    public Set<Class<?>> getClassByAnnotation(Class<? extends Annotation> annotation ){
+        // 1、获取beanmap的所有class对象
+        Set<Class<?>> classes = getClasses();
+        if (ValidationUtil.isEmpty(classes)){
+            log.warn("没有class对象");
+            return null;
+        }
+        // 2、通过注解筛选被注解标记过的class对象
+        HashSet<Class<?>> classSet = new HashSet<>();
+        for (Class<?> aClass : classes) {
+            // 类是否有相关的注解标记
+            if (aClass.isAnnotationPresent(annotation)){
+                classSet.add(aClass);
+            }
+        }
+        return classSet.size() > 0 ? classSet : null;
+    }
+
+    /**
+     * 通过超类获取所有子类的class,不包括本身
+     * @param interfaceOrClass
+     * @return
+     */
+    public Set<Class<?>> getClassBySuper(Class<?> interfaceOrClass){
+        // 1、获取beanmap的所有class对象
+        Set<Class<?>> classes = getClasses();
+        if (ValidationUtil.isEmpty(classes)){
+            log.warn("没有class对象");
+            return null;
+        }
+        // 2、通过超类筛选class对象
+        HashSet<Class<?>> classSet = new HashSet<>();
+        for (Class<?> aClass : classes) {
+            // 判断aclass是否是interfaceOrClass的子类
+            if (interfaceOrClass.isAssignableFrom(aClass) && !aClass.equals(interfaceOrClass)){
+                classSet.add(aClass);
+            }
+        }
+        return classSet.size() > 0 ? classSet : null;
+    }
 }

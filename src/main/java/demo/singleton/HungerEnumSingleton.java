@@ -1,4 +1,4 @@
-package demo.singletom;
+package demo.singleton;
 
 /**
  * @ProjectName: simpleframework
