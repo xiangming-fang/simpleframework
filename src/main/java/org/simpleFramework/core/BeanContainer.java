@@ -127,8 +127,8 @@ public class BeanContainer {
      * @param clazz
      * @return
      */
-    public Object getBean(Class<?> clazz){
-        return beanMap.get(clazz);
+    public <T> T getBean(Class<T> clazz){
+        return (T)beanMap.get(clazz);
     }
 
     /**

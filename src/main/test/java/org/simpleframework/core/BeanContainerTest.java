@@ -1,5 +1,6 @@
 package org.simpleframework.core;
 
+import indi.xm.jy.controller.frontend.MainPageController;
 import indi.xm.jy.entity.dto.Result;
 import indi.xm.jy.service.combine.HeadLineShopCategoryCombineService;
 import org.junit.jupiter.api.Assertions;
@@ -24,6 +25,14 @@ public class BeanContainerTest {
     @BeforeAll
     static void init(){
         ioc = BeanContainer.getInstance();
+    }
+
+
+    @Test
+    public void getBeanTest(){
+        ioc.loadBeans("indi");
+        MainPageController bean = ioc.getBean(MainPageController.class);
+        System.out.println(bean.getHeadLineShopCategoryCombineService());
     }
 
     @Test
